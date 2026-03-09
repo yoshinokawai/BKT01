@@ -7,43 +7,44 @@ import {
     SafeAreaView,
     StatusBar,
 } from 'react-native';
+import { Ionicons, Feather } from '@expo/vector-icons';
 import styles from './styles/homeStyles';
 
 const insightCards = [
     {
         id: 'scan',
-        icon: '📋',
+        icon: <Ionicons name="scan-outline" size={24} color="#5B6AF0" />,
         label: 'Scan new',
         subtitle: 'Scanned 483',
-        bgColor: '#EDE7F6',
-        iconBg: '#D1C4E9',
+        bgColor: '#FFFFFF',
+        iconBg: '#F0F0FE',
         navigateTo: 'Scan',
     },
     {
         id: 'counterfeits',
-        icon: '⚠️',
+        icon: <Ionicons name="warning-outline" size={24} color="#FF8A65" />,
         label: 'Counterfeits',
         subtitle: 'Counterfeited 32',
-        bgColor: '#FBE9E7',
-        iconBg: '#FFCCBC',
+        bgColor: '#FFFFFF',
+        iconBg: '#FFF0E6',
         navigateTo: null,
     },
     {
         id: 'success',
-        icon: '✅',
+        icon: <Ionicons name="checkmark-circle-outline" size={24} color="#4DB6AC" />,
         label: 'Success',
         subtitle: 'Checkouts 8',
-        bgColor: '#E0F2F1',
-        iconBg: '#B2DFDB',
+        bgColor: '#FFFFFF',
+        iconBg: '#E6F5F3',
         navigateTo: null,
     },
     {
         id: 'directory',
-        icon: '📅',
+        icon: <Feather name="calendar" size={24} color="#4FC3F7" />,
         label: 'Directory',
         subtitle: 'History 26',
-        bgColor: '#E1F5FE',
-        iconBg: '#B3E5FC',
+        bgColor: '#FFFFFF',
+        iconBg: '#E6F2FF',
         navigateTo: null,
     },
 ];
@@ -63,7 +64,7 @@ export default function HomeScreen({ navigation }) {
             <View style={styles.header}>
                 <View style={styles.headerLeft}>
                     <Text style={styles.greeting}>Hello 👋</Text>
-                    <Text style={styles.userName}>PHAM QUANG LINH</Text>
+                    <Text style={styles.userName}>Christie Doe</Text>
                 </View>
                 <Image
                     source={require('../assets/avatar.png')}
@@ -84,7 +85,7 @@ export default function HomeScreen({ navigation }) {
                         activeOpacity={0.7}
                     >
                         <View style={[styles.iconContainer, { backgroundColor: card.iconBg }]}>
-                            <Text style={styles.iconText}>{card.icon}</Text>
+                            {card.icon}
                         </View>
                         <Text style={styles.cardLabel}>{card.label}</Text>
                         <Text style={styles.cardSubtitle}>{card.subtitle}</Text>

@@ -61,12 +61,6 @@ export default function ScanScreen({ navigation }) {
 
                     {/* Scanner Viewfinder */}
                     <View style={styles.viewfinderContainer}>
-                        {/* Corner Brackets */}
-                        <View style={[styles.corner, styles.cornerTopLeft]} />
-                        <View style={[styles.corner, styles.cornerTopRight]} />
-                        <View style={[styles.corner, styles.cornerBottomLeft]} />
-                        <View style={[styles.corner, styles.cornerBottomRight]} />
-
                         {/* Product Image */}
                         <Image
                             source={require('../assets/juice.jpg')}
